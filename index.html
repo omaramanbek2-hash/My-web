@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HomeStyle — товары для дома</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin: 8px 0 0;
+    color: #ccc;
+}
+
+.hero {
+    padding: 45px 20px;
+    text-align: center;
+    background: white;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.hero p {
+    color: #666;
+    font-size: 17px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.product {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.product .image {
+    font-size: 70px;
+    padding: 20px;
+}
+
+.product h3 {
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 12px;
+}
+
+button {
+    border: none;
+    background: #111;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+    color: white;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏠 HomeStyle</h1>
+    <p>Товары, которые делают дом удобнее</p>
+</header>
+
+<section class="hero">
+    <h2>Всё для уютного дома</h2>
+    <p>Полезные и красивые товары по доступным ценам</p>
+</section>
+
+<section class="products">
+
+    <div class="product">
+        <div class="image">🪝</div>
+        <h3>Самоклеящиеся крючки</h3>
+        <div class="price">1 990 ₸</div>
+        <button>Купить</button>
+    </div>
+
+    <div class="product">
+        <div class="image">💡</div>
+        <h3>LED ночник</h3>
+        <div class="price">4 990 ₸</div>
+        <button>Купить</button>
+    </div>
+
+    <div class="product">
+        <div class="image">🧺</div>
+        <h3>Органайзер для дома</h3>
+        <div class="price">3 490 ₸</div>
+        <button>Купить</button>
+    </div>
+
+    <div class="product">
+        <div class="image">🧽</div>
+        <h3>Органайзер для кухни</h3>
+        <div class="price">2 990 ₸</div>
+        <button>Купить</button>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 HomeStyle
+</footer>
+
+</body>
+</html>
