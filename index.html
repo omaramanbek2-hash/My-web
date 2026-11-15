@@ -318,7 +318,7 @@ footer{
      aria-label="Предыдущее фото">‹</button>
     <button class="gallery-btn next" data-next="eiffel"
      aria-label="Следующее фото">›</button>
-    <span class="gallery-count" id="count-eiffel">1/3</span>
+    <span class="gallery-count" id="count-eiffel">1/2</span>
    </div>
    <div class="product-body">
     <h3 data-t="p1">Эйфелева башня — ночник</h3>
@@ -337,13 +337,13 @@ footer{
   <article class="product">
    <div class="photo" data-gallery="roller">
     <span class="tag" data-t="tagOffer">Подарок: 3 блока</span>
-    <img id="photo-roller" src="assets/Roller.jpg"
+    <img id="photo-roller" src="assets/Roller.PNG"
      alt="Розовый чистящий ролик">
     <button class="gallery-btn prev" data-prev="roller"
      aria-label="Предыдущее фото">‹</button>
     <button class="gallery-btn next" data-next="roller"
      aria-label="Следующее фото">›</button>
-    <span class="gallery-count" id="count-roller">1/3</span>
+    <span class="gallery-count" id="count-roller">1/2</span>
    </div>
    <div class="product-body">
     <h3 data-t="p2">Чистящий ролик для одежды</h3>
@@ -362,7 +362,7 @@ footer{
   <article class="product">
    <div class="photo" data-gallery="desk">
     <span class="tag" data-t="tagNew">Для учёбы и работы</span>
-    <img id="photo-desk" src="assets/Lamp.jpg"
+    <img id="photo-desk" src="assets/Lamp.PNG"
      alt="Белая настольная LED лампа">
     <button class="gallery-btn prev" data-prev="desk"
      aria-label="Предыдущее фото">‹</button>
@@ -454,8 +454,7 @@ const products = {
   img:"assets/Eiffel-town.jpg",
   images:[
    "assets/Eiffel-town.jpg",
-   "assets/Eiffel-town-2.jpg",
-   "assets/Eiffel-town-3.jpg"
+   "assets/Eiffel-town-2.jpg"
   ],
   names:{
    ru:"Эйфелева башня — ночник",
@@ -465,11 +464,10 @@ const products = {
  },
  roller:{
   price:2999,
-  img:"assets/Roller.jpg",
+  img:"assets/Roller.PNG",
   images:[
-   "assets/Roller.jpg",
-   "assets/Roller-2.jpg",
-   "assets/Roller-3.jpg"
+   "assets/Roller.PNG",
+   "assets/Roller-2.PNG"
   ],
   names:{
    ru:"Чистящий ролик для одежды",
@@ -479,11 +477,11 @@ const products = {
  },
  desk:{
   price:6500,
-  img:"assets/Lamp.jpg",
+  img:"assets/Lamp.PNG",
   images:[
-   "assets/Lamp.jpg",
-   "assets/Lamp-2.jpg",
-   "assets/Lamp-3.jpg"
+   "assets/Lamp.PNG",
+   "assets/Lamp-2.PNG",
+   "assets/Lamp-3.PNG"
   ],
   names:{
    ru:"Настольная LED-лампа",
@@ -648,6 +646,7 @@ function showPhoto(id, requestedIndex){
   const photo = img.closest(".photo");
 
   img.src = probe.src;
+  img.style.display = "block";
   photo.classList.remove("photo-error");
 
   const counter = document.getElementById("count-"+id);
@@ -658,18 +657,14 @@ function showPhoto(id, requestedIndex){
  probe.onerror = () => {
   if(token !== galleryToken[id]) return;
 
-  item.images.splice(index,1);
+  console.error("Не удалось загрузить фото:",item.images[index]);
 
-  if(item.images.length){
-   showPhoto(id,Math.min(index,item.images.length-1));
-  }else{
-   const img = document.getElementById("photo-"+id);
-   img.style.display = "none";
-   img.closest(".photo").classList.add("photo-error");
-   img.closest(".photo").querySelector(".gallery-count").textContent="";
-  }
+  const img = document.getElementById("photo-"+id);
+  img.style.display = "none";
+  img.closest(".photo").classList.add("photo-error");
+  img.closest(".photo").querySelector(".gallery-count").textContent="";
  };
-
+ 
  probe.src = item.images[index];
 }
 
