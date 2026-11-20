@@ -6,6 +6,15 @@
 <meta name="theme-color" content="#171411">
 <title>HomeStyle — уют начинается дома</title>
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YLJ9ZJFF5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2YLJ9ZJFF5');
+</script>
+
 <style>
 :root{
  --ink:#201c18;
@@ -664,7 +673,7 @@ function showPhoto(id, requestedIndex){
   img.closest(".photo").classList.add("photo-error");
   img.closest(".photo").querySelector(".gallery-count").textContent="";
  };
- 
+
  probe.src = item.images[index];
 }
 
